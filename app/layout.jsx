@@ -1,4 +1,5 @@
 import Nav from '@components/Nav';
+import Provider from '@components/Provider';
 import '@styles/global.css';
 import Head from './head';
 import Home from './page';
@@ -12,15 +13,17 @@ const Layout = ({ Children }) => {
   return (
     <html lang="en">
       <body>
-        <div className="main">
-          <div className="gradient" />
-        </div>
-        <main className="app">
-          <Head />
-          <Nav />
-          <Home />
-          {Children}
-        </main>
+        <Provider>
+          <div className="main">
+            <div className="gradient" />
+          </div>
+          <main className="app">
+            <Head />
+            <Nav />
+            <Home />
+            {Children}
+          </main>
+        </Provider>
       </body>
     </html>
   );
