@@ -1,23 +1,22 @@
 'use client';
 
 import { useSession } from 'next-auth/react';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 
-const { default: Form } = require('@components/Form');
+import Form from '@components/Form';
 
 const CreatePrompt = () => {
-  const Router = useRouter();
+  const router = useRouter();
   const { data: session } = useSession();
-  const [submitting, setSubmitting] = useState(false);
-  const [post, setPost] = useState({
-    prompt: '',
-    tag: '',
-  });
+
+  const [submitting, setIsSubmitting] = useState(false);
+  const [post, setPost] = useState({ prompt: '', tag: '' });
 
   const createPrompt = async (e) => {
     e.preventDefault();
-    setSubmitting(true);
+    setIsSubmitting(true);
+
     try {
       const response = await fetch('/api/prompt/new', {
         method: 'POST',
@@ -27,13 +26,14 @@ const CreatePrompt = () => {
           tag: post.tag,
         }),
       });
+
       if (response.ok) {
-        Router.push('/');
+        router.push('/');
       }
     } catch (error) {
       console.log(error);
     } finally {
-      setSubmitting(false);
+      setIsSubmitting(false);
     }
   };
 

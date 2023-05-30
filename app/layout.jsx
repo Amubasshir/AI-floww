@@ -1,6 +1,7 @@
 import Nav from '@components/Nav';
 import Provider from '@components/Provider';
 import '@styles/global.css';
+import Head from './head';
 
 export const metadata = {
   title: 'AI-Flow',
@@ -10,6 +11,7 @@ export const metadata = {
 const RootLayout = ({ children }) => (
   <html lang="en">
     <body>
+      <Head />
       <Provider>
         <div className="main">
           <div className="gradient" />
