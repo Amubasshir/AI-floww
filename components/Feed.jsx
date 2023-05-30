@@ -5,7 +5,7 @@ import PromptCard from './PromptCart';
 
 const PromptCardList = ({ data, handleTagClick }) => {
   return (
-    <div className="mt-16 prompt_layout">
+    <div className="mt-16  prompt_layout">
       {data.map((post) => (
         <PromptCard
           key={post._id}
@@ -40,7 +40,7 @@ const Feed = () => {
     const regex = new RegExp(searchtext, 'i'); // 'i' flag for case-insensitive search
     return allPosts.filter(
       (item) =>
-        regex.test(item.creator.username) ||
+        regex.test(item.creator?.username) ||
         regex.test(item.tag) ||
         regex.test(item.prompt)
     );
@@ -68,14 +68,14 @@ const Feed = () => {
 
   return (
     <section className="feed">
-      <form className="relative w-full flex-center">
+      <form className="relative  w-full flex-center">
         <input
           type="text"
           placeholder="Search for a tag or a username"
           value={searchText}
           onChange={handleSearchChange}
           required
-          className="search_input peer"
+          className="search_input "
         />
       </form>
 

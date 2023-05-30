@@ -27,8 +27,8 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
   };
 
   return (
-    <div className="prompt_card">
-      <div className="flex justify-between items-start gap-5">
+    <div className="prompt_card  ">
+      <div className="flex  justify-between items-start  gap-5">
         <div
           className="flex-1 flex justify-start items-center gap-3 cursor-pointer"
           onClick={handleProfileClick}
@@ -45,7 +45,7 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
             <h3 className="font-satoshi font-semibold text-gray-900">
               {post.creator?.username.slice(0, 6)}
             </h3>
-            <p className="font-inter text-sm text-gray-500">
+            <p className="font-inter text-sm text-gray-900">
               {post.creator?.email}
             </p>
           </div>
@@ -74,7 +74,7 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
       </p>
 
       {session?.user.id === post.creator?._id && pathName === '/profile' && (
-        <div className="mt-5 flex-center gap-4 border-t border-gray-100 pt-3">
+        <div className="mt-5 flex-center gap-4 border-t border-gray-800 pt-3">
           <div
             className="font-inter text-sm green_gradient cursor-pointer"
             onClick={handleEdit}
