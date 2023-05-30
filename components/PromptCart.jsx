@@ -13,8 +13,6 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
   const [copied, setCopied] = useState('');
 
   const handleProfileClick = () => {
-    console.log(post);
-
     if (post.creator._id === session?.user.id) return router.push('/profile');
 
     router.push(
@@ -81,13 +79,13 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
             className="font-inter text-sm green_gradient cursor-pointer"
             onClick={handleEdit}
           >
-            <Image src={'/assets/icons/delete.png'} width={12} height={12} />
+            <Image src={'/assets/icons/edit.png'} width={30} height={30} />
           </div>
           <div
             className="font-inter text-sm orange_gradient cursor-pointer"
             onClick={handleDelete}
           >
-            Delete
+            <Image src={'/assets/icons/delete.png'} width={30} height={30} />
           </div>
         </div>
       )}
