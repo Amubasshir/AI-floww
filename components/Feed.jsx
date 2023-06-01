@@ -75,7 +75,7 @@ const Feed = () => {
           value={searchText}
           onChange={handleSearchChange}
           required
-          className="search_input "
+          className="search_input placeholder-gray-600"
         />
       </form>
 
